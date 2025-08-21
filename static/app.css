@@ -1,0 +1,52 @@
+:root{
+  --bg:#0b0c10;
+  --surface:#121317;
+  --muted:#1a1c23;
+  --text:#e6e9ef;
+  --subtext:#a6adbb;
+  --brand:#6e9eff;
+  --brand-2:#89f7fe;
+  --border:#232634;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:linear-gradient(180deg,var(--bg),#0f1117);
+  color:var(--text); font:16px/1.5 system-ui, Segoe UI, Roboto, sans-serif;
+}
+.wrap{max-width:900px; margin:0 auto; padding:24px; display:flex; flex-direction:column; min-height:100vh}
+header{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+.brand .dot{width:10px; height:10px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); border-radius:50%}
+.ghost{background:transparent; border:1px solid var(--border); color:var(--subtext); padding:8px 12px; border-radius:10px; cursor:pointer}
+.primary{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#0b0c10; border:none; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer;
+  box-shadow:0 10px 20px rgba(0,0,0,.25)
+}
+.uploader{
+  background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; margin-bottom:16px
+}
+#uploadForm{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+#fileInput{padding:8px; background:var(--muted); border:1px dashed var(--border); border-radius:10px; color:var(--subtext)}
+#fileStatus{color:var(--subtext)}
+small{color:var(--subtext)}
+.chat{
+  background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:0; display:flex; flex-direction:column; flex:1; min-height:0
+}
+.messages{padding:16px; overflow:auto; flex:1}
+.message{display:flex; gap:12px; margin-bottom:14px}
+.bubble{
+  padding:12px 14px; border-radius:14px; max-width:78%; white-space:pre-wrap; word-wrap:break-word
+}
+.user .bubble{background:var(--brand); color:#0b0c10; border-top-right-radius:4px}
+.ai .bubble{background:#161922; border:1px solid var(--border); color:var(--text); border-top-left-radius:4px}
+.composer{display:flex; gap:10px; padding:12px; border-top:1px solid var(--border)}
+#chatInput{
+  flex:1; resize:none; padding:12px; background:var(--muted); border:1px solid var(--border);
+  color:var(--text); border-radius:12px; min-height:48px; max-height:160px; outline:none
+}
+#sendBtn{min-width:90px}
+.loader{width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--brand); border-radius:50%; animation:spin .9s linear infinite; margin-top:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+footer{margin-top:16px; color:var(--subtext); text-align:center}
