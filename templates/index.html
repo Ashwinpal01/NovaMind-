@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AI File Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="dot"></div>
+        <span>AI File Chat</span>
+      </div>
+      <button id="resetBtn" class="ghost">Reset</button>
+    </header>
+
+    <section class="uploader">
+      <form id="uploadForm">
+        <input id="fileInput" type="file" accept=".pdf,.docx,.txt"/>
+        <button type="submit" class="primary">Upload</button>
+        <span id="fileStatus">{{ filename if filename else "No file uploaded" }}</span>
+      </form>
+      <small>Accepted: PDF, DOCX, TXT</small>
+    </section>
+
+    <section class="chat">
+      <div id="messages" class="messages"></div>
+      <form id="chatForm" class="composer">
+        <textarea id="chatInput" placeholder="Ask anything about your file..."></textarea>
+        <button id="sendBtn" class="primary" type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <small>Built with Flask • Embeddings + Chat under the hood</small>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
